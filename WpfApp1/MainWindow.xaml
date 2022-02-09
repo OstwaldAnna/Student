@@ -24,6 +24,12 @@
                 Height="25"
                 Margin="5"
                 Background="#F0E9A5"/>
+            <Button
+                Content="Добавить"
+                Width="100"
+                Height="25"
+                Margin="5"
+                Background="#F0E9A5"/>
         </StackPanel>
        
 
