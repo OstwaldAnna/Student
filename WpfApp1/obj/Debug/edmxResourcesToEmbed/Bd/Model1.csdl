@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudSolidModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="StudSolidEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cabinet" EntityType="StudSolidModel.Cabinet" />
+    <EntitySet Name="Class" EntityType="StudSolidModel.Class" />
+    <EntitySet Name="Item" EntityType="StudSolidModel.Item" />
+    <EntitySet Name="Progress" EntityType="StudSolidModel.Progress" />
+    <EntitySet Name="Student" EntityType="StudSolidModel.Student" />
+    <EntitySet Name="sysdiagrams" EntityType="StudSolidModel.sysdiagrams" />
+    <EntitySet Name="Teacher" EntityType="StudSolidModel.Teacher" />
+    <AssociationSet Name="FK_Teacher_Cabinet" Association="StudSolidModel.FK_Teacher_Cabinet">
+      <End Role="Cabinet" EntitySet="Cabinet" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_Class" Association="StudSolidModel.FK_Student_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Student" EntitySet="Student" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Progress_Item" Association="StudSolidModel.FK_Progress_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Progress" EntitySet="Progress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Item" Association="StudSolidModel.FK_Teacher_Item">
+      <End Role="Item" EntitySet="Item" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Progress_Student" Association="StudSolidModel.FK_Progress_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Progress" EntitySet="Progress" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cabinet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Numder" Type="Int32" />
+    <NavigationProperty Name="Teacher" Relationship="StudSolidModel.FK_Teacher_Cabinet" FromRole="Cabinet" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="Int32" />
+    <NavigationProperty Name="Student" Relationship="StudSolidModel.FK_Student_Class" FromRole="Class" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Item" FromRole="Item" ToRole="Progress" />
+    <NavigationProperty Name="Teacher" Relationship="StudSolidModel.FK_Teacher_Item" FromRole="Item" ToRole="Teacher" />
+  </EntityType>
+  <EntityType Name="Progress">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdStudent" Type="Int32" />
+    <Property Name="Mark" Type="Int32" />
+    <Property Name="IdItem" Type="Int32" />
+    <NavigationProperty Name="Item" Relationship="StudSolidModel.FK_Progress_Item" FromRole="Progress" ToRole="Item" />
+    <NavigationProperty Name="Student" Relationship="StudSolidModel.FK_Progress_Student" FromRole="Progress" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameStudent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Class" Type="Int32" />
+    <NavigationProperty Name="Class1" Relationship="StudSolidModel.FK_Student_Class" FromRole="Student" ToRole="Class" />
+    <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Student" FromRole="Student" ToRole="Progress" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Teacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdObject" Type="Int32" />
+    <Property Name="IdCabinet" Type="Int32" />
+    <NavigationProperty Name="Cabinet" Relationship="StudSolidModel.FK_Teacher_Cabinet" FromRole="Teacher" ToRole="Cabinet" />
+    <NavigationProperty Name="Item" Relationship="StudSolidModel.FK_Teacher_Item" FromRole="Teacher" ToRole="Item" />
+  </EntityType>
+  <Association Name="FK_Teacher_Cabinet">
+    <End Type="StudSolidModel.Cabinet" Role="Cabinet" Multiplicity="0..1" />
+    <End Type="StudSolidModel.Teacher" Role="Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cabinet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="IdCabinet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_Class">
+    <End Type="StudSolidModel.Class" Role="Class" Multiplicity="0..1" />
+    <End Type="StudSolidModel.Student" Role="Student" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Class" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Progress_Item">
+    <End Type="StudSolidModel.Item" Role="Item" Multiplicity="0..1" />
+    <End Type="StudSolidModel.Progress" Role="Progress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Progress">
+        <PropertyRef Name="IdItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_Item">
+    <End Type="StudSolidModel.Item" Role="Item" Multiplicity="0..1" />
+    <End Type="StudSolidModel.Teacher" Role="Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="IdObject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Progress_Student">
+    <End Type="StudSolidModel.Student" Role="Student" Multiplicity="0..1" />
+    <End Type="StudSolidModel.Progress" Role="Progress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Progress">
+        <PropertyRef Name="IdStudent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
