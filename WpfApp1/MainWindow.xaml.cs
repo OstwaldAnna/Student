@@ -26,7 +26,7 @@ namespace WpfApp1
         {
             InitializeComponent();
             //Подключение к БД
-            DataHelper.entities = new StudSolidEntities();
+            DataHelper.entities = new StudSolidEntities1();
             DataHelper.frame = FrmMain;
         }
 
@@ -34,6 +34,11 @@ namespace WpfApp1
         {
             //Переход по станицам
             DataHelper.frame.Navigate(new TeacherPage());
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            DataHelper.frame.Navigate(new AddPage());
         }
     }
 }

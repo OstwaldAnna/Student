@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="600" Width="1020"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Background="#E6D3B1"
         FontSize="14">
     <Grid>
@@ -19,14 +21,16 @@
             <Button Name="DtnTeacher"
                     Click="DtnTeacher_Click"
                 Content="Учитель"
-                Width="100"
+                Width="150"
                 Height="25"
                 Margin="5"
                 Background="#F0E9A5"/>
 
             <Button
-                Content="Добавить"
-                Width="100"
+                Content="Добавить оценку"
+                Name="BtnAdd"
+                Click="BtnAdd_Click"
+                Width="150"
                 Height="25"
                 Margin="5"
                 Background="#F0E9A5"/>

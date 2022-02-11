@@ -1,67 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище StudSolidModelContainer" CdmEntityContainer="StudSolidEntities">
+  <EntityContainerMapping StorageEntityContainer="Хранилище StudSolidModelContainer" CdmEntityContainer="StudSolidEntities1">
     <EntitySetMapping Name="Cabinet">
       <EntityTypeMapping TypeName="StudSolidModel.Cabinet">
         <MappingFragment StoreEntitySet="Cabinet">
-          <ScalarProperty Name="Numder" ColumnName="Numder" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Numder" ColumnName="Numder" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Class">
       <EntityTypeMapping TypeName="StudSolidModel.Class">
         <MappingFragment StoreEntitySet="Class">
-          <ScalarProperty Name="Number" ColumnName="Number" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Item">
       <EntityTypeMapping TypeName="StudSolidModel.Item">
         <MappingFragment StoreEntitySet="Item">
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Progress">
       <EntityTypeMapping TypeName="StudSolidModel.Progress">
         <MappingFragment StoreEntitySet="Progress">
-          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
-          <ScalarProperty Name="Mark" ColumnName="Mark" />
-          <ScalarProperty Name="IdStudent" ColumnName="IdStudent" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdStudent" ColumnName="IdStudent" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Student">
       <EntityTypeMapping TypeName="StudSolidModel.Student">
         <MappingFragment StoreEntitySet="Student">
-          <ScalarProperty Name="Class" ColumnName="Class" />
-          <ScalarProperty Name="NameStudent" ColumnName="NameStudent" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameStudent" ColumnName="NameStudent" />
+          <ScalarProperty Name="IdClass" ColumnName="IdClass" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="StudSolidModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
           <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Teacher">
       <EntityTypeMapping TypeName="StudSolidModel.Teacher">
         <MappingFragment StoreEntitySet="Teacher">
-          <ScalarProperty Name="IdCabinet" ColumnName="IdCabinet" />
-          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
-          <ScalarProperty Name="Name_Teacher" ColumnName="Name_Teacher" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name_Teacher" ColumnName="Name_Teacher" />
+          <ScalarProperty Name="IdObject" ColumnName="IdObject" />
+          <ScalarProperty Name="IdCabinet" ColumnName="IdCabinet" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

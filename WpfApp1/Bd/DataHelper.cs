@@ -13,7 +13,7 @@ namespace WpfApp1.Bd
     public class DataHelper
     {
         //Задача переменных, к БД и переходу страниц
-        public static StudSolidEntities entities;
+        public static StudSolidEntities1 entities;
         public static Frame frame;
     }
 }

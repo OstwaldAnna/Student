@@ -45,3 +45,5 @@ C:\Users\Asya\Documents\GitHub\Student\WpfApp1\obj\Debug\WpfApp1.csproj.CoreComp
 C:\Users\Asya\Documents\GitHub\Student\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
 C:\Users\Asya\Documents\GitHub\Student\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Asya\Documents\GitHub\Student\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Asya\Documents\GitHub\Student\WpfApp1\obj\Debug\Pages\AddPage.g.cs
+C:\Users\Asya\Documents\GitHub\Student\WpfApp1\obj\Debug\Pages\AddPage.baml

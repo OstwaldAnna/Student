@@ -36,7 +36,7 @@
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NameStudent" Type="nvarchar" MaxLength="50" />
-    <Property Name="Class" Type="int" />
+    <Property Name="IdClass" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -89,7 +89,7 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Student">
-        <PropertyRef Name="Class" />
+        <PropertyRef Name="IdClass" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:WpfApp1.Pages"
       mc:Ignorable="d" 
       Background="#E6D3B1"
+      FontSize="14"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TeacherPage">
 
@@ -13,16 +14,36 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="45*"/>
             <RowDefinition Height="362*"/>
-            <RowDefinition Height="43*"/>
         </Grid.RowDefinitions>
         <Grid 
-           Grid.Row="0"
+            Grid.Row="0" 
             Background="#B6F0CC">
             <TextBlock
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Text="Профиль: учитель">
             </TextBlock>
+            <StackPanel 
+                Orientation="Horizontal"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center"
+                Margin="10">
+            <TextBlock Text="Выбор класса:" Margin="3"/>
+                <ComboBox Name="CbClass"
+                      Width="100"
+                      Margin="5"
+                      DropDownClosed="CbClass_DropDownClosed"
+                      SelectedIndex="0">
+                </ComboBox>
+                <Button Name="BtnAll"
+                        Content="Показать все"
+                        Click="BtnAll_Click"
+                        Background="#F0E9A5"
+                        Width="100"
+                        Height="25"/>
+
+
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
             <DataGrid
