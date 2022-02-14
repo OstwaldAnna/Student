@@ -61,9 +61,9 @@
   </EntityType>
   <EntityType Name="Mark">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="Int32" />
     <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Mark" FromRole="Mark" ToRole="Progress" />
   </EntityType>
@@ -163,7 +163,7 @@
     <End Type="StudSolidModel.Progress" Role="Progress" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Mark">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Progress">
         <PropertyRef Name="IdMark" />

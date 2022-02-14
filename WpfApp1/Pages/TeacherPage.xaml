@@ -41,7 +41,20 @@
                         Background="#F0E9A5"
                         Width="100"
                         Height="25"/>
+            </StackPanel>
+            <StackPanel
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Margin="10">
+                <Button
+                    Content="Удалить"
+                    Background="LightCoral"
+                    Width="100"
+                    Height="25"
+                    Name="BtnDelete"
+                    Click="BtnDelete_Click">
 
+                </Button>
 
             </StackPanel>
         </Grid>

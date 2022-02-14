@@ -28,10 +28,6 @@ namespace WpfApp1.Pages
             CbFIO.DisplayMemberPath = "NameStudent";
             CbFIO.ItemsSource = DataHelper.entities.Student.ToList();
 
-            //CbClass.SelectedValuePath = "ID";
-            //CbClass.DisplayMemberPath = "Number";
-            //CbClass.ItemsSource = DataHelper.entities.Class.ToList();
-
             CbItem.SelectedValuePath = "ID";
             CbItem.DisplayMemberPath = "Name";
             CbItem.ItemsSource = DataHelper.entities.Item.ToList();

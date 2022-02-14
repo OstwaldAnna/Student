@@ -28,9 +28,9 @@
         </EntityType>
         <EntityType Name="Mark">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Name" Type="int" />
         </EntityType>
         <EntityType Name="Progress">
@@ -86,7 +86,7 @@
           <End Role="Progress" Type="Self.Progress" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Mark">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Progress">
               <PropertyRef Name="IdMark" />
@@ -240,9 +240,9 @@
         </EntityType>
         <EntityType Name="Mark">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="Int32" />
           <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Mark" FromRole="Mark" ToRole="Progress" />
         </EntityType>
@@ -342,7 +342,7 @@
           <End Type="StudSolidModel.Progress" Role="Progress" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Mark">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Progress">
               <PropertyRef Name="IdMark" />
@@ -361,7 +361,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -395,7 +395,7 @@
             <EntityTypeMapping TypeName="StudSolidModel.Mark">
               <MappingFragment StoreEntitySet="Mark">
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -460,6 +460,23 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="54cbcf0783f146e29c5fd436a76834dd" Name="Diagram1">
+        <EntityTypeShape EntityType="StudSolidModel.Cabinet" Width="1.5" PointX="0.75" PointY="13.125" />
+        <EntityTypeShape EntityType="StudSolidModel.Class" Width="1.5" PointX="1.5" PointY="9.875" />
+        <EntityTypeShape EntityType="StudSolidModel.Item" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="StudSolidModel.Mark" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="StudSolidModel.Progress" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="StudSolidModel.Student" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="StudSolidModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2" />
+        <EntityTypeShape EntityType="StudSolidModel.Teacher" Width="1.5" PointX="3" PointY="3.875" />
+        <AssociationConnector Association="StudSolidModel.FK_Teacher_Cabinet" />
+        <AssociationConnector Association="StudSolidModel.FK_Student_Class" />
+        <AssociationConnector Association="StudSolidModel.FK_Progress_Item" />
+        <AssociationConnector Association="StudSolidModel.FK_Teacher_Item" />
+        <AssociationConnector Association="StudSolidModel.FK_Progress_Mark" />
+        <AssociationConnector Association="StudSolidModel.FK_Progress_Student" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>

@@ -57,7 +57,15 @@ namespace WpfApp1.Pages {
         #line hidden
         
         
-        #line 50 "..\..\..\Pages\TeacherPage.xaml"
+        #line 54 "..\..\..\Pages\TeacherPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button BtnDelete;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 63 "..\..\..\Pages\TeacherPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid DgStudent;
         
@@ -113,6 +121,15 @@ namespace WpfApp1.Pages {
             #line hidden
             return;
             case 3:
+            this.BtnDelete = ((System.Windows.Controls.Button)(target));
+            
+            #line 55 "..\..\..\Pages\TeacherPage.xaml"
+            this.BtnDelete.Click += new System.Windows.RoutedEventHandler(this.BtnDelete_Click);
+            
+            #line default
+            #line hidden
+            return;
+            case 4:
             this.DgStudent = ((System.Windows.Controls.DataGrid)(target));
             return;
             }

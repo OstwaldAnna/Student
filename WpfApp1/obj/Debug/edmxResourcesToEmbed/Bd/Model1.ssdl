@@ -23,9 +23,9 @@
   </EntityType>
   <EntityType Name="Mark">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="ID" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="Name" Type="int" />
   </EntityType>
   <EntityType Name="Progress">
@@ -81,7 +81,7 @@
     <End Role="Progress" Type="Self.Progress" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Mark">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Progress">
         <PropertyRef Name="IdMark" />

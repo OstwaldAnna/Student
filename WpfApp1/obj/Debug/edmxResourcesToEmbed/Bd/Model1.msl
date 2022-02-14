@@ -29,7 +29,7 @@
       <EntityTypeMapping TypeName="StudSolidModel.Mark">
         <MappingFragment StoreEntitySet="Mark">
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

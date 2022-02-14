@@ -39,5 +39,10 @@ namespace WpfApp1.Pages
         {
             DgStudent.ItemsSource = DataHelper.entities.Progress.ToList();
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

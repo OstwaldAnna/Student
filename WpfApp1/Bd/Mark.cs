@@ -27,7 +27,7 @@ public partial class Mark
     }
 
 
-    public int Id { get; set; }
+    public int ID { get; set; }
 
     public Nullable<int> Name { get; set; }
 
