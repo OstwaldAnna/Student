@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Bd;
 
 namespace WpfApp1.Pages
 {
@@ -23,6 +24,35 @@ namespace WpfApp1.Pages
         public AddPage()
         {
             InitializeComponent();
+            CbFIO.SelectedValuePath = "ID";
+            CbFIO.DisplayMemberPath = "NameStudent";
+            CbFIO.ItemsSource = DataHelper.entities.Student.ToList();
+
+            //CbClass.SelectedValuePath = "ID";
+            //CbClass.DisplayMemberPath = "Number";
+            //CbClass.ItemsSource = DataHelper.entities.Class.ToList();
+
+            CbItem.SelectedValuePath = "ID";
+            CbItem.DisplayMemberPath = "Name";
+            CbItem.ItemsSource = DataHelper.entities.Item.ToList();
+
+            CbMark.SelectedValuePath = "ID";
+            CbMark.DisplayMemberPath = "Name";
+            CbMark.ItemsSource = DataHelper.entities.Mark.ToList();
+        }
+
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Progress progress = new Progress()
+            {
+                IdItem = (int)CbItem.SelectedValue,
+                IdMark = (int)CbMark.SelectedValue,
+                IdStudent = (int)CbFIO.SelectedValue,
+            };
+            DataHelper.entities.Progress.Add(progress);
+            DataHelper.entities.SaveChanges();
+            MessageBox.Show("Оценка успешно добавлена");
         }
     }
 }

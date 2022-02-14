@@ -20,22 +20,27 @@
             Margin="5">
             <TextBlock Text="ФИО:"
                        Margin="5"/>
-            <ComboBox Width="150">
+                <ComboBox 
+                      Width="150"
+                      Name="CbFIO"
+                      SelectedIndex="0" >
 
-             </ComboBox>
+                </ComboBox>
 
             </StackPanel>
-            <StackPanel
+            <!--<StackPanel
                  Orientation="Horizontal" 
                  VerticalAlignment="Center" 
                  HorizontalAlignment="Right"
                  Margin="5">
             <TextBlock Text="Класс:"
                        Margin="5"/>
-            <ComboBox Width="150">
+            <ComboBox Name="CbClass" Width="150"
+                      
+                      SelectedIndex="0">
                 
             </ComboBox>
-            </StackPanel>
+            </StackPanel>-->
             <StackPanel
                  Orientation="Horizontal" 
                  VerticalAlignment="Center" 
@@ -43,7 +48,8 @@
                  Margin="5">
                 <TextBlock Text="Оценка:"
                        Margin="5"/>
-                <ComboBox Width="150">
+                <ComboBox Width="150" Name="CbMark" 
+                      SelectedIndex="0">
 
                 </ComboBox>
             </StackPanel>
@@ -54,7 +60,8 @@
                  Margin="5">
                 <TextBlock Text="Предмет:"
                        Margin="5"/>
-                <ComboBox Width="150">
+                <ComboBox Width="150" Name="CbItem" 
+                      SelectedIndex="0">
 
                 </ComboBox>
             </StackPanel>
@@ -64,7 +71,8 @@
                  VerticalAlignment="Center" 
                  HorizontalAlignment="Right"
                  Margin="5">
-                <Button
+                <Button Name="BtnSave"
+                        Click="BtnSave_Click"
                     Content="Добавить"
                     Margin="5"
                     Background="#F0E9A5"

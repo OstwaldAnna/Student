@@ -51,7 +51,7 @@
             AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ФИО студента" Binding="{Binding Student.NameStudent}" Width="*"/>
-                    <DataGridTextColumn Header="Оценка" Width="*" Binding="{Binding Mark}"/>
+                    <DataGridTextColumn Header="Оценка" Width="*" Binding="{Binding Mark.Name}"/>
                     <DataGridTextColumn Header="Предмет" Width="*" Binding="{Binding Item.Name}"/>
                 </DataGrid.Columns>
             </DataGrid>
