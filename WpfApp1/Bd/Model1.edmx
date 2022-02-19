@@ -10,7 +10,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Numder" Type="int" />
+          <Property Name="Number" Type="int" />
         </EntityType>
         <EntityType Name="Class">
           <Key>
@@ -65,7 +65,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name_Teacher" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameTeacher" Type="nvarchar" MaxLength="50" />
           <Property Name="IdObject" Type="int" />
           <Property Name="IdCabinet" Type="int" />
         </EntityType>
@@ -180,10 +180,10 @@
     <edmx:ConceptualModels>
       <Schema Namespace="StudSolidModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="StudSolidEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mark" EntityType="StudSolidModel.Mark" />
           <EntitySet Name="Cabinet" EntityType="StudSolidModel.Cabinet" />
           <EntitySet Name="Class" EntityType="StudSolidModel.Class" />
           <EntitySet Name="Item" EntityType="StudSolidModel.Item" />
-          <EntitySet Name="Mark" EntityType="StudSolidModel.Mark" />
           <EntitySet Name="Progress" EntityType="StudSolidModel.Progress" />
           <EntitySet Name="Student" EntityType="StudSolidModel.Student" />
           <EntitySet Name="sysdiagrams" EntityType="StudSolidModel.sysdiagrams" />
@@ -212,13 +212,21 @@
             <End Role="Student" EntitySet="Student" />
             <End Role="Progress" EntitySet="Progress" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
+        <EntityType Name="Mark">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="Int32" />
+          <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Mark" FromRole="Mark" ToRole="Progress" />
+        </EntityType>
         <EntityType Name="Cabinet">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Numder" Type="Int32" />
+          <Property Name="Number" Type="Int32" />
           <NavigationProperty Name="Teacher" Relationship="StudSolidModel.FK_Teacher_Cabinet" FromRole="Cabinet" ToRole="Teacher" />
         </EntityType>
         <EntityType Name="Class">
@@ -237,14 +245,6 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Item" FromRole="Item" ToRole="Progress" />
           <NavigationProperty Name="Teacher" Relationship="StudSolidModel.FK_Teacher_Item" FromRole="Item" ToRole="Teacher" />
-        </EntityType>
-        <EntityType Name="Mark">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="Int32" />
-          <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Mark" FromRole="Mark" ToRole="Progress" />
         </EntityType>
         <EntityType Name="Progress">
           <Key>
@@ -283,7 +283,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name_Teacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameTeacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IdObject" Type="Int32" />
           <Property Name="IdCabinet" Type="Int32" />
           <NavigationProperty Name="Cabinet" Relationship="StudSolidModel.FK_Teacher_Cabinet" FromRole="Teacher" ToRole="Cabinet" />
@@ -367,10 +367,18 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище StudSolidModelContainer" CdmEntityContainer="StudSolidEntities1">
+          <EntitySetMapping Name="Mark">
+            <EntityTypeMapping TypeName="StudSolidModel.Mark">
+              <MappingFragment StoreEntitySet="Mark">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Cabinet">
             <EntityTypeMapping TypeName="StudSolidModel.Cabinet">
               <MappingFragment StoreEntitySet="Cabinet">
-                <ScalarProperty Name="Numder" ColumnName="Numder" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -386,14 +394,6 @@
           <EntitySetMapping Name="Item">
             <EntityTypeMapping TypeName="StudSolidModel.Item">
               <MappingFragment StoreEntitySet="Item">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Mark">
-            <EntityTypeMapping TypeName="StudSolidModel.Mark">
-              <MappingFragment StoreEntitySet="Mark">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
@@ -434,12 +434,12 @@
               <MappingFragment StoreEntitySet="Teacher">
                 <ScalarProperty Name="IdCabinet" ColumnName="IdCabinet" />
                 <ScalarProperty Name="IdObject" ColumnName="IdObject" />
-                <ScalarProperty Name="Name_Teacher" ColumnName="Name_Teacher" />
+                <ScalarProperty Name="NameTeacher" ColumnName="NameTeacher" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

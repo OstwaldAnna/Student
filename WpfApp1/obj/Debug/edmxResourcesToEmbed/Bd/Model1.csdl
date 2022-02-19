@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="StudSolidModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="StudSolidEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Mark" EntityType="StudSolidModel.Mark" />
     <EntitySet Name="Cabinet" EntityType="StudSolidModel.Cabinet" />
     <EntitySet Name="Class" EntityType="StudSolidModel.Class" />
     <EntitySet Name="Item" EntityType="StudSolidModel.Item" />
-    <EntitySet Name="Mark" EntityType="StudSolidModel.Mark" />
     <EntitySet Name="Progress" EntityType="StudSolidModel.Progress" />
     <EntitySet Name="Student" EntityType="StudSolidModel.Student" />
     <EntitySet Name="sysdiagrams" EntityType="StudSolidModel.sysdiagrams" />
@@ -34,12 +34,20 @@
       <End Role="Progress" EntitySet="Progress" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Mark">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="Int32" />
+    <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Mark" FromRole="Mark" ToRole="Progress" />
+  </EntityType>
   <EntityType Name="Cabinet">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Numder" Type="Int32" />
+    <Property Name="Number" Type="Int32" />
     <NavigationProperty Name="Teacher" Relationship="StudSolidModel.FK_Teacher_Cabinet" FromRole="Cabinet" ToRole="Teacher" />
   </EntityType>
   <EntityType Name="Class">
@@ -58,14 +66,6 @@
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Item" FromRole="Item" ToRole="Progress" />
     <NavigationProperty Name="Teacher" Relationship="StudSolidModel.FK_Teacher_Item" FromRole="Item" ToRole="Teacher" />
-  </EntityType>
-  <EntityType Name="Mark">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="Int32" />
-    <NavigationProperty Name="Progress" Relationship="StudSolidModel.FK_Progress_Mark" FromRole="Mark" ToRole="Progress" />
   </EntityType>
   <EntityType Name="Progress">
     <Key>
@@ -104,7 +104,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name_Teacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NameTeacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IdObject" Type="Int32" />
     <Property Name="IdCabinet" Type="Int32" />
     <NavigationProperty Name="Cabinet" Relationship="StudSolidModel.FK_Teacher_Cabinet" FromRole="Teacher" ToRole="Cabinet" />

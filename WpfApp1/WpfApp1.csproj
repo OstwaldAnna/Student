@@ -120,6 +120,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddTeacherPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DataTeachPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\TeacherPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +136,12 @@
   <ItemGroup>
     <Compile Include="Pages\AddPage.xaml.cs">
       <DependentUpon>AddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddTeacherPage.xaml.cs">
+      <DependentUpon>AddTeacherPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DataTeachPage.xaml.cs">
+      <DependentUpon>DataTeachPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TeacherPage.xaml.cs">
       <DependentUpon>TeacherPage.xaml</DependentUpon>

@@ -5,7 +5,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Numder" Type="int" />
+    <Property Name="Number" Type="int" />
   </EntityType>
   <EntityType Name="Class">
     <Key>
@@ -60,7 +60,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name_Teacher" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameTeacher" Type="nvarchar" MaxLength="50" />
     <Property Name="IdObject" Type="int" />
     <Property Name="IdCabinet" Type="int" />
   </EntityType>

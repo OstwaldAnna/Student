@@ -21,8 +21,7 @@ namespace WpfApp1.Pages
     /// </summary>
     public partial class TeacherPage : Page
     {
-        public TeacherPage()
-        {
+        public TeacherPage() {
             InitializeComponent();
             DgStudent.ItemsSource = DataHelper.entities.Progress.ToList();
             CbClass.SelectedValuePath = "ID";
@@ -30,19 +29,32 @@ namespace WpfApp1.Pages
             CbClass.ItemsSource = DataHelper.entities.Class.ToList();
         }
 
-        private void CbClass_DropDownClosed(object sender, EventArgs e)
-        {
+        private void CbClass_DropDownClosed(object sender, EventArgs e) 
+            {
+            //Сортировка по класам
             DgStudent.ItemsSource = DataHelper.entities.Progress.Where(x => x.Student.Class.ID == (int)CbClass.SelectedValue).ToList();
-        }
+            }
 
-        private void BtnAll_Click(object sender, RoutedEventArgs e)
-        {
+        private void BtnAll_Click(object sender, RoutedEventArgs e) 
+            {
+            //Вывод всего DataGrid
             DgStudent.ItemsSource = DataHelper.entities.Progress.ToList();
-        }
+            }
 
-        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        private void BtnDelete_Click(object sender, RoutedEventArgs e) 
         {
-
-        }
+            MessageBoxResult result = MessageBox.Show("Вы действительно хотите удалить оценку?", "Подтверждение", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+			switch (result)
+			{
+                case MessageBoxResult.Yes:
+                    break;
+                case MessageBoxResult.No:
+                    break;
+                case MessageBoxResult.Cancel:
+                    break;
+				default:
+                    break;
+			}
+		}
     }
 }

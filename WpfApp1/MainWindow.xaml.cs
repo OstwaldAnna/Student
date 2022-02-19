@@ -40,5 +40,15 @@ namespace WpfApp1
         {
             DataHelper.frame.Navigate(new AddPage());
         }
-    }
+
+		private void BtnAddTeach_Click(object sender, RoutedEventArgs e) 
+        {
+            DataHelper.frame.Navigate(new AddTeacherPage());
+		}
+
+		private void BtnDataTeach_Click(object sender, RoutedEventArgs e) 
+        {
+            DataHelper.frame.Navigate(new DataTeachPage());
+		}
+	}
 }

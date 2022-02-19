@@ -29,7 +29,7 @@ public partial class Cabinet
 
     public int ID { get; set; }
 
-    public Nullable<int> Numder { get; set; }
+    public Nullable<int> Number { get; set; }
 
 
 

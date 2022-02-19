@@ -18,9 +18,14 @@
         <StackPanel Grid.Column="0"
             VerticalAlignment="Center"
             HorizontalAlignment="Center" >
+            <TextBlock
+                Text="Функции для завуча:"
+                HorizontalAlignment="Center"
+                FontSize="16" 
+                FontWeight="Bold"/>
             <Button Name="DtnTeacher"
                     Click="DtnTeacher_Click"
-                Content="Учитель"
+                Content="Оценки учеников"
                 Width="150"
                 Height="25"
                 Margin="5"
@@ -34,7 +39,25 @@
                 Height="25"
                 Margin="5"
                 Background="#F0E9A5"/>
+            <Button
+                Content="Данные об учителях"
+                Name="BtnDataTeach"
+                Click="BtnDataTeach_Click"
+                Width="150"
+                Height="25"
+                Margin="5"
+                Background="#F0E9A5"/>
+            <Button
+                Content="Добавить учителя"
+                Name="BtnAddTeach"
+                Click="BtnAddTeach_Click"
+                Width="150"
+                Height="25"
+                Margin="5"
+                Background="#F0E9A5"/>
+            
         </StackPanel>
+        
         <Frame Name="FrmMain" NavigationUIVisibility="Hidden" 
                Grid.Column="1"/>
 

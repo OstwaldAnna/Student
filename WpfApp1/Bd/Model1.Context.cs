@@ -32,13 +32,13 @@ public partial class StudSolidEntities1 : DbContext
     }
 
 
+    public virtual DbSet<Mark> Mark { get; set; }
+
     public virtual DbSet<Cabinet> Cabinet { get; set; }
 
     public virtual DbSet<Class> Class { get; set; }
 
     public virtual DbSet<Item> Item { get; set; }
-
-    public virtual DbSet<Mark> Mark { get; set; }
 
     public virtual DbSet<Progress> Progress { get; set; }
 

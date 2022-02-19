@@ -23,6 +23,7 @@ namespace WpfApp1.Pages
     {
         public AddPage()
         {
+            //Добавление данных в ComboBox
             InitializeComponent();
             CbFIO.SelectedValuePath = "ID";
             CbFIO.DisplayMemberPath = "NameStudent";

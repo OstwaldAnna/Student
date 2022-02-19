@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Asya\Desktop\Student-main\WpfApp1\obj\Debug\
+E:\Student-main\WpfApp1\obj\Debug\
 WpfApp1
 none
 false
 DEBUG;TRACE
-C:\Users\Asya\Desktop\Student-main\WpfApp1\App.xaml
-3-244636281
+E:\Student-main\WpfApp1\App.xaml
+5407470829
 21800425316
-19773764434
-181539706727
-MainWindow.xaml;Pages\AddPage.xaml;Pages\TeacherPage.xaml;
+212097022838
+18-2050142235
+MainWindow.xaml;Pages\AddPage.xaml;Pages\AddTeacherPage.xaml;Pages\DataTeachPage.xaml;Pages\TeacherPage.xaml;
 
 False
 

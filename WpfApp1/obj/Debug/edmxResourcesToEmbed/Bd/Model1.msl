@@ -1,10 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Хранилище StudSolidModelContainer" CdmEntityContainer="StudSolidEntities1">
+    <EntitySetMapping Name="Mark">
+      <EntityTypeMapping TypeName="StudSolidModel.Mark">
+        <MappingFragment StoreEntitySet="Mark">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Cabinet">
       <EntityTypeMapping TypeName="StudSolidModel.Cabinet">
         <MappingFragment StoreEntitySet="Cabinet">
-          <ScalarProperty Name="Numder" ColumnName="Numder" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -20,14 +28,6 @@
     <EntitySetMapping Name="Item">
       <EntityTypeMapping TypeName="StudSolidModel.Item">
         <MappingFragment StoreEntitySet="Item">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Mark">
-      <EntityTypeMapping TypeName="StudSolidModel.Mark">
-        <MappingFragment StoreEntitySet="Mark">
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
@@ -68,7 +68,7 @@
         <MappingFragment StoreEntitySet="Teacher">
           <ScalarProperty Name="IdCabinet" ColumnName="IdCabinet" />
           <ScalarProperty Name="IdObject" ColumnName="IdObject" />
-          <ScalarProperty Name="Name_Teacher" ColumnName="Name_Teacher" />
+          <ScalarProperty Name="NameTeacher" ColumnName="NameTeacher" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -18,7 +18,7 @@
             VerticalAlignment="Center" 
             HorizontalAlignment="Right"
             Margin="5">
-            <TextBlock Text="ФИО:"
+            <TextBlock Text="ФИО ученика:"
                        Margin="5"/>
                 <ComboBox 
                       Width="150"
@@ -28,19 +28,7 @@
                 </ComboBox>
 
             </StackPanel>
-            <!--<StackPanel
-                 Orientation="Horizontal" 
-                 VerticalAlignment="Center" 
-                 HorizontalAlignment="Right"
-                 Margin="5">
-            <TextBlock Text="Класс:"
-                       Margin="5"/>
-            <ComboBox Name="CbClass" Width="150"
-                      
-                      SelectedIndex="0">
-                
-            </ComboBox>
-            </StackPanel>-->
+            
             <StackPanel
                  Orientation="Horizontal" 
                  VerticalAlignment="Center" 

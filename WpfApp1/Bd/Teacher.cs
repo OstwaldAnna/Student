@@ -20,7 +20,7 @@ public partial class Teacher
 
     public int ID { get; set; }
 
-    public string Name_Teacher { get; set; }
+    public string NameTeacher { get; set; }
 
     public Nullable<int> IdObject { get; set; }
 

@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp1.Pages"
       mc:Ignorable="d" 
-      Background="#E6D3B1"
       FontSize="14"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TeacherPage">
@@ -21,7 +20,7 @@
             <TextBlock
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Text="Профиль: учитель">
+                Text="Оценки учеников">
             </TextBlock>
             <StackPanel 
                 Orientation="Horizontal"
